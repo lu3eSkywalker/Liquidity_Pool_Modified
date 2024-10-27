@@ -74,6 +74,11 @@ contract LiquidityPoolFactory {
         return address(newPool);
     }
     
+    // Function to retrieve all pools created by a specific user
+    function getPoolsByUser(address user) external view returns (PoolData[] memory) {
+        return userPools[user];
+    }
+
     // Function to retrieve all pools
     function getAllPools() external view returns (address[] memory) {
         return allPools;

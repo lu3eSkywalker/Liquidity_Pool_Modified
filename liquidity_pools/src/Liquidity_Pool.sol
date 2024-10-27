@@ -93,6 +93,22 @@ contract LiquidityPool {
         currentTotalLiquidity = totalLiquidity; // Total liquidity in the pool
     }
 
+    // Function to get the current reserves
+    function getReserves() external view returns (uint256, uint256) {
+        return (reserve0, reserve1);
+    }
+
+    // Function to get token information
+    function getTokenInfo()
+        external
+        view
+        returns (address tokenA, address tokenB, address lpTokenAddress)
+    {
+        tokenA = address(token0); // Address of Token A
+        tokenB = address(token1); // Address of Token B
+        lpTokenAddress = address(lpToken); // Address of LPToken
+    }
+
     // Utility functions
     function sqrt(uint y) internal pure returns (uint z) {
         if (y > 3) {
