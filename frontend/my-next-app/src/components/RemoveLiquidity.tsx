@@ -56,7 +56,7 @@ const RemoveLiquidity = () => {
   }
 
   return (
-    <div>
+    <div className="bg-gray-100">
       <br />
       <br />
       <br />
@@ -65,28 +65,36 @@ const RemoveLiquidity = () => {
       </div>
       <div
         className="flex flex-col justify-center items-center h-screen bg-gray-100"
-        style={{ height: "85vh" }}
+        style={{ height: "70vh" }}
       >
-        <div className="bg-white shadow-md rounded-lg p-8 w-80 mb-6">
+        <div className="bg-white shadow-md rounded-lg p-8 w-[400px] mb-6">
           <div>
-            <input
-              type="text"
-              placeholder="Deployed Liquidity Pool Address"
-              onChange={(e) => setContractAddress(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+            <label className="input input-bordered flex items-center gap-2 font-black">
+              Address:
+              <input
+                type="text"
+                className="grow"
+                placeholder="Deployed Liquidity Pool Address"
+                onChange={(e) => setContractAddress(e.target.value)}
+              />
+            </label>
 
-            <input
-              type="number"
-              placeholder="Liquidity"
-              onChange={(e) => setLiquidityToRemove(parseInt(e.target.value))}
-              className="w-full p-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+            <label className="input input-bordered flex items-center gap-2 my-4 font-black">
+              Address:
+              <input
+                type="number"
+                className="grow"
+                placeholder="Liquidity"
+                onChange={(e) => setLiquidityToRemove(parseInt(e.target.value))}
+              />
+            </label>
           </div>
+
+          <br />
 
           <button
             onClick={() => removeLiquidity()}
-            className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+            className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 font-bold"
           >
             Initialize the contract
           </button>
@@ -95,7 +103,15 @@ const RemoveLiquidity = () => {
           <br />
 
           <div className="font-bold">{liquidityRemoved}</div>
-          <div className="text-center text-gray-700 font-medium">
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        <div className="text-center text-gray-700 font-medium">
           <div className="text-center text-gray-700 font-medium">
             <ul className="steps">
               <li className="step step-primary">
@@ -117,7 +133,6 @@ const RemoveLiquidity = () => {
               </li>
             </ul>
           </div>
-        </div>
         </div>
       </div>
     </div>

@@ -22,7 +22,7 @@ const CreateLiquidityPool = () => {
     useState<string>("");
 
   const liquidityPoolFactoryContract =
-    "0x2E983A1Ba5e8b38AAAeC4B440B9dDcFBf72E15d1";
+    "0x663F3ad617193148711d28f5334eE4Ed07016602";
 
   const ABI = [
     "function createPool(address, address) external returns (address)",
@@ -84,59 +84,65 @@ const CreateLiquidityPool = () => {
         >
           <div className="bg-white shadow-md rounded-lg p-8 w-80 mb-6">
             <div>
-              <input
-                type="text"
-                placeholder="token 0 address"
-                onChange={(e) => setToken0(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+              <label className="input input-bordered flex items-center gap-2 font-black">
+                Address:
+                <input
+                  type="text"
+                  className="grow"
+                  placeholder="token 0 address"
+                  onChange={(e) => setToken0(e.target.value)}
+                />
+              </label>
 
-              <input
-                type="text"
-                placeholder="token 1 address"
-                onChange={(e) => setToken1(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+              <label className="input input-bordered flex items-center gap-2 my-2 font-black">
+                Address:
+                <input
+                  type="text"
+                  className="grow"
+                  placeholder="token 1 address"
+                  onChange={(e) => setToken1(e.target.value)}
+                />
+              </label>
             </div>
+
+            <br />
 
             <button
               onClick={() => createPool()}
-              className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+              className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 font-bold"
             >
               Create Liquidity Pool
             </button>
 
             <br />
-            <br />
-
             {<div>{tokenCreationSuccessfull}</div>}
+          </div>
 
-            <br />
-            <br />
-            <br />
-            <br />
+          <br />
+          <br />
+          <br />
+          <br />
 
-            <div className="text-center text-gray-700 font-medium">
-              <ul className="steps">
-                <li className="step step-primary">
-                  <a href="./createliquiditypool">Create Liquidity Pool</a>
-                </li>
-                <li className="step">
-                  <a href="./liquiditypoolbyuser">
-                    Get Our Liquidity Pool Contract Address
-                  </a>
-                </li>
-                <li className="step">
-                  <a href="./approvetokens">Approve the Tokens</a>
-                </li>
-                <li className="step">
-                  <a href="./addliquidity">Add Liquidity</a>
-                </li>
-                <li className="step">
-                  <a href="./removeliquidity">Remove Liquidity</a>
-                </li>
-              </ul>
-            </div>
+          <div className="text-center text-gray-700 font-medium">
+            <ul className="steps">
+              <li className="step step-primary">
+                <a href="./createliquiditypool">Create Liquidity Pool</a>
+              </li>
+              <li className="step">
+                <a href="./liquiditypoolbyuser">
+                  Get Our Liquidity Pool Contract Address
+                </a>
+              </li>
+              <li className="step">
+                <a href="./approvetokens">Approve the Tokens</a>
+              </li>
+              <li className="step">
+                <a href="./addliquidity">Add Liquidity</a>
+              </li>
+              <li className="step">
+                <a href="./removeliquidity">Remove Liquidity</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

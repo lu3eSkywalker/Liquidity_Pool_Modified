@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
+import LiquidityPoolByUserInfo from "./Walkthrough/LiquidityPoolByUserInfo";
+import TokenInfo from "./TokenInfo";
 
 declare global {
   interface Window {
@@ -14,7 +16,7 @@ const GetLiquidityPoolCreatedByUser = () => {
   const [error, setError] = useState<string | null>(null);
 
   const liquidityPoolFactoryContract =
-    "0x2E983A1Ba5e8b38AAAeC4B440B9dDcFBf72E15d1";
+    "0x663F3ad617193148711d28f5334eE4Ed07016602";
   const RPC_URL = process.env.NEXT_PUBLIC_RPC_URL;
 
   const ABI = [
@@ -43,33 +45,37 @@ const GetLiquidityPoolCreatedByUser = () => {
   }
 
   return (
-    <div>
+    <div className="bg-gray-100">
       <br />
       <br />
       <br />
       <div className="flex justify-center bg-gray-100">
-        <GetLiquidityPoolCreatedByUser />
+        <LiquidityPoolByUserInfo />
       </div>
 
       <div
         className="flex flex-col justify-center items-center h-screen bg-gray-100"
-        style={{ height: "80vh" }}
+        style={{ height: "70vh" }}
       >
-        <div className="bg-white shadow-md rounded-lg p-8 w-80 mb-6">
+        <div className="bg-white shadow-md rounded-lg p-8 w-[380px] mb-6">
           <div>
-            <input
-              type="text"
-              placeholder="Enter User Address"
-              value={userAddress}
-              onChange={(e) => setUserAddress(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+            <label className="input input-bordered flex items-center gap-2 font-black">
+              Address:
+              <input
+                type="text"
+                className="grow"
+                placeholder="Enter User Address"
+                onChange={(e) => setUserAddress(e.target.value)}
+              />
+            </label>
           </div>
+
+          <br />
 
           <div>
             <button
               onClick={getAllLiquidityPools}
-              className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+              className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 font-bold"
             >
               Get the addresses
             </button>
@@ -98,32 +104,34 @@ const GetLiquidityPoolCreatedByUser = () => {
               </div>
             ))}
           </div>
+        </div>
 
-          <br />
-          <br />
-          <br />
-          <br />
-          <div className="text-center text-gray-700 font-medium">
-            <ul className="steps">
-              <li className="step step-primary">
-                <a href="./createliquiditypool">Create Liquidity Pool</a>
-              </li>
-              <li className="step step-primary">
-                <a href="./liquiditypoolbyuser">
-                  Get Our Liquidity Pool Contract Address
-                </a>
-              </li>
-              <li className="step">
-                <a href="./approvetokens">Approve the Tokens</a>
-              </li>
-              <li className="step">
-                <a href="./addliquidity">Add Liquidity</a>
-              </li>
-              <li className="step">
-                <a href="./removeliquidity">Remove Liquidity</a>
-              </li>
-            </ul>
-          </div>
+        {selectedAddress && <TokenInfo addressOfContract={selectedAddress} />}
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <div className="text-center text-gray-700 font-medium">
+          <ul className="steps">
+            <li className="step step-primary">
+              <a href="./createliquiditypool">Create Liquidity Pool</a>
+            </li>
+            <li className="step step-primary">
+              <a href="./liquiditypoolbyuser">
+                Get Our Liquidity Pool Contract Address
+              </a>
+            </li>
+            <li className="step">
+              <a href="./approvetokens">Approve the Tokens</a>
+            </li>
+            <li className="step">
+              <a href="./addliquidity">Add Liquidity</a>
+            </li>
+            <li className="step">
+              <a href="./removeliquidity">Remove Liquidity</a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

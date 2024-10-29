@@ -11,7 +11,7 @@ declare global {
 
 const AddLiquidity = () => {
   const [contractAddress, setContractAddress] = useState<string>(
-    "0xa783cdc72e34a174cca57a6d9a74904d0bec05a9"
+    "0xb7a5bd0345ef1cc5e66bf61bdec17d2461fbd968"
   );
 
   const [tokenAQuantity, setTokenAQuantity] = useState<number>(0);
@@ -59,44 +59,54 @@ const AddLiquidity = () => {
   }
 
   return (
-    <div>
+    <div className="bg-gray-100">
       <br />
       <br />
       <br />
       <div className="flex justify-center bg-gray-100">
         <AddingLiquidityInfo />
       </div>
+
       <div
         className="flex flex-col justify-center items-center h-screen bg-gray-100"
-        style={{ height: "85vh" }}
+        style={{ height: "70vh" }}
       >
-        <div className="bg-white shadow-md rounded-lg p-8 w-80 mb-6">
+        <div className="bg-white shadow-md rounded-lg p-8 w-[500px] mb-6">
           <div>
-            <input
-              type="text"
-              placeholder="Deployed Liquidity Pool Address"
-              onChange={(e) => setContractAddress(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+            <label className="input input-bordered flex items-center gap-2 font-black text-xl">
+              Address:
+              <input
+                type="text"
+                className="grow"
+                placeholder="Deployed Liquidity Pool Address"
+                onChange={(e) => setContractAddress(e.target.value)}
+              />
+            </label>
 
-            <input
-              type="number"
-              placeholder="Token A Quantity"
-              onChange={(e) => setTokenAQuantity(parseInt(e.target.value))}
-              className="w-full p-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-
-            <input
-              type="number"
-              placeholder="Token B Quantity"
-              onChange={(e) => setTokenBQuantity(parseInt(e.target.value))}
-              className="w-full p-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+            <label className="input input-bordered flex items-center gap-2 my-2 font-black text-xl">
+              Quantity:
+              <input
+                type="number"
+                className="grow"
+                placeholder="Token A Quantity"
+                onChange={(e) => setTokenAQuantity(parseInt(e.target.value))}
+              />
+            </label>
+            <label className="input input-bordered flex items-center gap-2 my-2 font-black text-xl">
+              Quantity:
+              <input
+                type="number"
+                className="grow"
+                placeholder="Token B Quantity"
+                onChange={(e) => setTokenBQuantity(parseInt(e.target.value))}
+              />
+            </label>
           </div>
 
+          <br />
           <button
             onClick={() => addLiquidity()}
-            className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+            className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 font-bold"
           >
             Initialize the contract
           </button>
@@ -106,6 +116,7 @@ const AddLiquidity = () => {
 
           <div className="font-bold">{liquidityAdded}</div>
         </div>
+
         <br />
         <br />
         <br />

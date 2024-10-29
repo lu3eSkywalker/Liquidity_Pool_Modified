@@ -99,36 +99,50 @@ const ApproveTokens = () => {
       <div className="flex justify-center bg-gray-100">
         <ApproveTokensInfo />
       </div>
+
       <div
         className="flex flex-col justify-center items-center h-screen bg-gray-100"
         style={{ height: "70vh" }}
       >
-        <div className="bg-white shadow-md rounded-lg p-8 w-[450px] mb-6">
+        <div className="bg-white shadow-md rounded-lg p-8 w-[800px] mb-6">
           <div>
-            <input
-              type="text"
-              placeholder="Liquidity Pool address"
-              onChange={(e) => setLiquidityPoolAddress(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+
+            <label className="input input-bordered flex items-center gap-2 font-black">
+              Address:
+              <input
+                type="text"
+                className="grow"
+                placeholder="Liquidity Pool Address"
+                onChange={(e) => setLiquidityPoolAddress(e.target.value)}
+              />
+            </label>
           </div>
 
           <div className="flex items-center mb-4">
-            <input
-              type="text"
-              placeholder="Token 0 address"
-              onChange={(e) => setToken0(e.target.value)}
-              className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mx-2 w-[150px]"
-            />
-            <input
-              type="number"
-              placeholder="Token 0 value"
-              onChange={(e) => setValue0(parseInt(e.target.value))}
-              className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mx-2 w-[100px]"
-            />
+
+            <label className="input input-bordered flex items-center gap-2 my-4 font-black">
+              Address:
+              <input
+                type="text"
+                className="grow"
+                placeholder="Token 0 address"
+                onChange={(e) => setToken0(e.target.value)}
+              />
+            </label>
+
+            <label className="input input-bordered flex items-center gap-2 mx-2 font-black">
+              Value
+              <input
+                type="number"
+                className="grow"
+                placeholder="Token 0 value"
+                onChange={(e) => setValue0(parseInt(e.target.value))}
+              />
+            </label>
+
             <button
               onClick={() => approveToken0()}
-              className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mx-2"
+              className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mx-2 font-bold"
             >
               Approve
             </button>
@@ -154,21 +168,32 @@ const ApproveTokens = () => {
           </div>
 
           <div className="flex items-center mb-4">
-            <input
-              type="text"
-              placeholder="Token 1 address"
-              onChange={(e) => setToken1(e.target.value)}
-              className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mx-2 w-[150px]"
-            />
-            <input
-              type="number"
-              placeholder="Token 1 value"
-              onChange={(e) => setValue1(parseInt(e.target.value))}
-              className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mx-2 w-[100px]"
-            />
+            <label className="input input-bordered flex items-center gap-2 font-black">
+              Address:
+              <input
+                type="text"
+                className="grow"
+                placeholder="Token 1 address"
+                onChange={(e) => setToken1(e.target.value)}
+              />
+            </label>
+
+            <label className="input input-bordered flex items-center gap-2 mx-2 font-black">
+              Value
+              <input
+                type="number"
+                className="grow"
+                placeholder="Token 1 value"
+                onChange={(e) => setValue1(parseInt(e.target.value))}
+              />
+            </label>
+
+            <br />
+            <br />
+
             <button
               onClick={() => approveToken1()}
-              className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mx-2"
+              className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mx-2 font-bold"
             >
               Approve
             </button>
@@ -193,7 +218,6 @@ const ApproveTokens = () => {
             )}
           </div>
         </div>
-        <br />
 
         <br />
         <br />
