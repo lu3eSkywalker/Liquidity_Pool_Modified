@@ -8,14 +8,13 @@ declare global {
 }
 
 const GetLiquidityPoolCreatedByUser = () => {
-  const [userAddress, setUserAddress] = useState<string>(
-    ""
-  );
+  const [userAddress, setUserAddress] = useState<string>("");
   const [address, setAddress] = useState<string[]>([]);
   const [selectedAddress, setSelectedAddress] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
 
-  const liquidityPoolFactoryContract = "0x2E983A1Ba5e8b38AAAeC4B440B9dDcFBf72E15d1";
+  const liquidityPoolFactoryContract =
+    "0x2E983A1Ba5e8b38AAAeC4B440B9dDcFBf72E15d1";
   const RPC_URL = process.env.NEXT_PUBLIC_RPC_URL;
 
   const ABI = [
@@ -45,6 +44,13 @@ const GetLiquidityPoolCreatedByUser = () => {
 
   return (
     <div>
+      <br />
+      <br />
+      <br />
+      <div className="flex justify-center bg-gray-100">
+        <GetLiquidityPoolCreatedByUser />
+      </div>
+
       <div
         className="flex flex-col justify-center items-center h-screen bg-gray-100"
         style={{ height: "80vh" }}
@@ -70,27 +76,53 @@ const GetLiquidityPoolCreatedByUser = () => {
           </div>
 
           {error && (
-            <div className="text-red-500 text-center mt-4">
-              {error}
-            </div>
+            <div className="text-red-500 text-center mt-4">{error}</div>
           )}
 
           <div className="mt-4">
             {address.map((data, index) => (
-              <div key={index} className="text-gray-700 mb-2 break-words font-bold">
+              <div
+                key={index}
+                className="text-gray-700 mb-2 break-words font-bold"
+              >
                 <br />
-                {data} 
+                {data}
                 <br />
-                <button 
-                  className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" 
+                <button
+                  className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                   onClick={() => setSelectedAddress(data)}
                 >
                   More Info
                 </button>
                 <br />
-
               </div>
             ))}
+          </div>
+
+          <br />
+          <br />
+          <br />
+          <br />
+          <div className="text-center text-gray-700 font-medium">
+            <ul className="steps">
+              <li className="step step-primary">
+                <a href="./createliquiditypool">Create Liquidity Pool</a>
+              </li>
+              <li className="step step-primary">
+                <a href="./liquiditypoolbyuser">
+                  Get Our Liquidity Pool Contract Address
+                </a>
+              </li>
+              <li className="step">
+                <a href="./approvetokens">Approve the Tokens</a>
+              </li>
+              <li className="step">
+                <a href="./addliquidity">Add Liquidity</a>
+              </li>
+              <li className="step">
+                <a href="./removeliquidity">Remove Liquidity</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

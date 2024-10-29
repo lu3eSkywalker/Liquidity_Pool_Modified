@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { ethers } from "ethers";
+import CreatingLiquidityPoolInfo from "./Walkthrough/CreatingLiquidityPoolInfo";
 
 declare global {
   interface Window {
@@ -69,6 +70,13 @@ const CreateLiquidityPool = () => {
 
   return (
     <div className="bg-gray-100">
+      <br />
+      <br />
+      <br />
+
+      <div className="flex justify-center bg-gray-100">
+        <CreatingLiquidityPoolInfo />
+      </div>
       <div>
         <div
           className="flex flex-col justify-center items-center bg-gray-100"
@@ -102,6 +110,33 @@ const CreateLiquidityPool = () => {
             <br />
 
             {<div>{tokenCreationSuccessfull}</div>}
+
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <div className="text-center text-gray-700 font-medium">
+              <ul className="steps">
+                <li className="step step-primary">
+                  <a href="./createliquiditypool">Create Liquidity Pool</a>
+                </li>
+                <li className="step">
+                  <a href="./liquiditypoolbyuser">
+                    Get Our Liquidity Pool Contract Address
+                  </a>
+                </li>
+                <li className="step">
+                  <a href="./approvetokens">Approve the Tokens</a>
+                </li>
+                <li className="step">
+                  <a href="./addliquidity">Add Liquidity</a>
+                </li>
+                <li className="step">
+                  <a href="./removeliquidity">Remove Liquidity</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
