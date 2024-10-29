@@ -106,7 +106,7 @@ const AddLiquidity = () => {
           <br />
           <button
             onClick={() => addLiquidity()}
-            className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 font-bold"
+            className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 font-bold text-xl"
           >
             Initialize the contract
           </button>
@@ -121,7 +121,7 @@ const AddLiquidity = () => {
         <br />
         <br />
         <div className="text-center text-gray-700 font-medium">
-          <ul className="steps">
+          <ul className="steps text-xl">
             <li className="step step-primary">
               <a href="./createliquiditypool">Create Liquidity Pool</a>
             </li>

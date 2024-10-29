@@ -44,22 +44,45 @@ const GetCurrentLiquidity = () => {
   }
 
   return (
-    <div>
+    <div className="bg-gray-100">
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <div className="flex justify-center font-bold text-4xl">
+        Get all the Current Reserves in the pool
+      </div>
       <div
         className="flex flex-col justify-center items-center h-screen bg-gray-100"
-        style={{ height: "80vh" }}
+        style={{ height: "65vh" }}
       >
         <div className="flex justify-center items-center h-screen bg-gray-100">
-          <div className="bg-white shadow-md rounded-lg p-8 w-80">
-            <button
-              className="btn text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 text-lg rounded-lg px-5 py-2.5 text-center me-2 mb-2"
-              onClick={() => getLiquidityInfo()}
-            >
-              get info
-            </button>
+          <div className="bg-white shadow-md rounded-lg p-8 w-[600px]">
+
+            <div className="flex">
+              <label className="input input-bordered flex items-center gap-2 font-black text-xl">
+                Address:
+                <input
+                  type="text"
+                  className="grow"
+                  placeholder="liquidity pool contract address"
+                  onChange={(e) => setContractAddress(e.target.value)}
+                />
+              </label>
+              <br />
+
+              <button
+                className="btn text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 text-lg rounded-lg px-5 py-2.5 text-center me-2 mb-2 mx-5"
+                onClick={() => getLiquidityInfo()}
+              >
+                get info
+              </button>
+            </div>
 
             {tokenAReserve ? (
-              <div>Token A in reserve: {tokenAReserve}</div>
+              <div className="text-xl">Token A in reserve: {tokenAReserve}</div>
             ) : (
               <p></p>
             )}
@@ -67,7 +90,10 @@ const GetCurrentLiquidity = () => {
             <br />
 
             {tokenBReserve ? (
-              <div> Token B in reserve: {tokenBReserve}</div>
+              <div className="text-xl">
+                {" "}
+                Token B in reserve: {tokenBReserve}
+              </div>
             ) : (
               <p></p>
             )}
@@ -75,9 +101,8 @@ const GetCurrentLiquidity = () => {
             <br />
 
             {remainingTotalLiquidity ? (
-              <div>
-                Remaining Liquidity in the liquidity pool:{" "}
-                {remainingTotalLiquidity}
+              <div className="text-xl">
+                Total Liquidity in the liquidity pool: {remainingTotalLiquidity}
               </div>
             ) : (
               <p></p>
@@ -86,6 +111,7 @@ const GetCurrentLiquidity = () => {
             <br></br>
             <br></br>
           </div>
+
         </div>
       </div>
     </div>

@@ -22,7 +22,7 @@ const CreateLiquidityPool = () => {
     useState<string>("");
 
   const liquidityPoolFactoryContract =
-    "0x663F3ad617193148711d28f5334eE4Ed07016602";
+    "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
   const ABI = [
     "function createPool(address, address) external returns (address)",
@@ -82,9 +82,9 @@ const CreateLiquidityPool = () => {
           className="flex flex-col justify-center items-center bg-gray-100"
           style={{ height: "70vh" }}
         >
-          <div className="bg-white shadow-md rounded-lg p-8 w-80 mb-6">
+          <div className="bg-white shadow-md rounded-lg p-8 w-[450px] h-[250px] mb-6">
             <div>
-              <label className="input input-bordered flex items-center gap-2 font-black">
+              <label className="input input-bordered flex items-center gap-2 font-black text-xl">
                 Address:
                 <input
                   type="text"
@@ -94,7 +94,7 @@ const CreateLiquidityPool = () => {
                 />
               </label>
 
-              <label className="input input-bordered flex items-center gap-2 my-2 font-black">
+              <label className="input input-bordered flex items-center gap-2 my-2 font-black text-xl">
                 Address:
                 <input
                   type="text"
@@ -109,7 +109,7 @@ const CreateLiquidityPool = () => {
 
             <button
               onClick={() => createPool()}
-              className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 font-bold"
+              className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 font-bold text-xl"
             >
               Create Liquidity Pool
             </button>
@@ -124,7 +124,7 @@ const CreateLiquidityPool = () => {
           <br />
 
           <div className="text-center text-gray-700 font-medium">
-            <ul className="steps">
+            <ul className="steps text-xl">
               <li className="step step-primary">
                 <a href="./createliquiditypool">Create Liquidity Pool</a>
               </li>

@@ -52,7 +52,9 @@ const Walkthrough = () => {
           <div className="timeline-end mb-10">
             <time className="font-mono italic">Step 2</time>
             <div className="text-lg font-black">
-              <a href="./liquiditypoolbyuser">Getting the Address of the Liquidity Pool Created</a>
+              <a href="./liquiditypoolbyuser">
+                Getting the Address of the Liquidity Pool Created
+              </a>
             </div>
             To get the address of the liquidity pool, we can use the user public
             address, to see the liquidity pool created by the user. We can also
@@ -78,7 +80,9 @@ const Walkthrough = () => {
           </div>
           <div className="timeline-start mb-10 md:text-end">
             <time className="font-mono italic">Step 3</time>
-            <div className="text-lg font-black"><a href="./approvetokens">Approve The Tokens</a></div>
+            <div className="text-lg font-black">
+              <a href="./approvetokens">Approve The Tokens</a>
+            </div>
             In this step, we will approve our tokens for use by the liquidity
             pool, a necessary action for enabling liquidity provisioning. Token
             approval is a fundamental process in decentralized finance (DeFi),
@@ -107,9 +111,12 @@ const Walkthrough = () => {
           </div>
           <div className="timeline-end mb-10">
             <time className="font-mono italic">Step 4</time>
-            <div className="text-lg font-black"><a href="./addliquidity">Adding Liquidity</a></div>
-            In this, we would add liquidity to our liquidity pool by adding both the 
-            token 0 and token 1 and would get the respective LPtoken back to our account.
+            <div className="text-lg font-black">
+              <a href="./addliquidity">Adding Liquidity</a>
+            </div>
+            In this, we would add liquidity to our liquidity pool by adding both
+            the token 0 and token 1 and would get the respective LPtoken back to
+            our account.
           </div>
           <hr />
         </li>
@@ -131,10 +138,13 @@ const Walkthrough = () => {
           </div>
           <div className="timeline-start mb-10 md:text-end">
             <time className="font-mono italic">Step 5</time>
-            <div className="text-lg font-black"><a href="/removeliquidity">Removing Liquidity</a></div>
-            For removing the liquidity, we would have to provide the LP tokens that we got
-            during adding the liquidity to the pool. After providing the LP token, we would get our 
-            respective tokens, back in our account.
+            <div className="text-lg font-black">
+              <a href="/removeliquidity">Removing Liquidity</a>
+            </div>
+            For removing the liquidity, we would have to provide the LP tokens
+            that we got during adding the liquidity to the pool. After providing
+            the LP token, we would get our respective tokens, back in our
+            account.
           </div>
         </li>
       </ul>

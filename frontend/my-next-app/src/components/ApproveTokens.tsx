@@ -17,7 +17,7 @@ const ApproveTokens = () => {
     "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
   );
   const [liquidityPoolAddress, setLiquidityPoolAddress] = useState<string>(
-    "0x2E983A1Ba5e8b38AAAeC4B440B9dDcFBf72E15d1"
+    "0x5FbDB2315678afecb367f032d93F642f64180aa3"
   );
 
   const [value0, setValue0] = useState<number>(0);
@@ -104,10 +104,9 @@ const ApproveTokens = () => {
         className="flex flex-col justify-center items-center h-screen bg-gray-100"
         style={{ height: "70vh" }}
       >
-        <div className="bg-white shadow-md rounded-lg p-8 w-[800px] mb-6">
+        <div className="bg-white shadow-md rounded-lg p-8 w-[950px] mb-6">
           <div>
-
-            <label className="input input-bordered flex items-center gap-2 font-black">
+            <label className="input input-bordered flex items-center gap-2 font-black text-xl">
               Address:
               <input
                 type="text"
@@ -119,8 +118,7 @@ const ApproveTokens = () => {
           </div>
 
           <div className="flex items-center mb-4">
-
-            <label className="input input-bordered flex items-center gap-2 my-4 font-black">
+            <label className="input input-bordered flex items-center gap-2 my-4 font-black text-xl">
               Address:
               <input
                 type="text"
@@ -130,7 +128,7 @@ const ApproveTokens = () => {
               />
             </label>
 
-            <label className="input input-bordered flex items-center gap-2 mx-2 font-black">
+            <label className="input input-bordered flex items-center gap-2 mx-2 font-black text-xl">
               Value
               <input
                 type="number"
@@ -142,7 +140,7 @@ const ApproveTokens = () => {
 
             <button
               onClick={() => approveToken0()}
-              className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mx-2 font-bold"
+              className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mx-2 font-bold text-xl"
             >
               Approve
             </button>
@@ -168,7 +166,7 @@ const ApproveTokens = () => {
           </div>
 
           <div className="flex items-center mb-4">
-            <label className="input input-bordered flex items-center gap-2 font-black">
+            <label className="input input-bordered flex items-center gap-2 font-black text-xl">
               Address:
               <input
                 type="text"
@@ -178,7 +176,7 @@ const ApproveTokens = () => {
               />
             </label>
 
-            <label className="input input-bordered flex items-center gap-2 mx-2 font-black">
+            <label className="input input-bordered flex items-center gap-2 mx-2 font-black text-xl">
               Value
               <input
                 type="number"
@@ -193,7 +191,7 @@ const ApproveTokens = () => {
 
             <button
               onClick={() => approveToken1()}
-              className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mx-2 font-bold"
+              className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mx-2 font-bold text-xl"
             >
               Approve
             </button>
@@ -224,7 +222,7 @@ const ApproveTokens = () => {
         <br />
         <br />
         <div className="text-center text-gray-700 font-medium">
-          <ul className="steps">
+          <ul className="steps text-xl">
             <li className="step step-primary">
               <a href="./createliquiditypool">Create Liquidity Pool</a>
             </li>

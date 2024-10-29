@@ -16,7 +16,7 @@ const GetLiquidityPoolCreatedByUser = () => {
   const [error, setError] = useState<string | null>(null);
 
   const liquidityPoolFactoryContract =
-    "0x663F3ad617193148711d28f5334eE4Ed07016602";
+    "0x5FbDB2315678afecb367f032d93F642f64180aa3";
   const RPC_URL = process.env.NEXT_PUBLIC_RPC_URL;
 
   const ABI = [
@@ -26,7 +26,7 @@ const GetLiquidityPoolCreatedByUser = () => {
   const provider = new ethers.JsonRpcProvider(RPC_URL);
   const contract = new ethers.Contract(
     liquidityPoolFactoryContract ||
-      "0x663F3ad617193148711d28f5334eE4Ed07016602",
+      "0x5FbDB2315678afecb367f032d93F642f64180aa3",
     ABI,
     provider
   );
@@ -57,9 +57,9 @@ const GetLiquidityPoolCreatedByUser = () => {
         className="flex flex-col justify-center items-center h-screen bg-gray-100"
         style={{ height: "70vh" }}
       >
-        <div className="bg-white shadow-md rounded-lg p-8 w-[380px] mb-6">
+        <div className="bg-white shadow-md rounded-lg p-8 w-[450px] mb-6">
           <div>
-            <label className="input input-bordered flex items-center gap-2 font-black">
+            <label className="input input-bordered flex items-center gap-2 font-black text-xl">
               Address:
               <input
                 type="text"
@@ -75,7 +75,7 @@ const GetLiquidityPoolCreatedByUser = () => {
           <div>
             <button
               onClick={getAllLiquidityPools}
-              className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 font-bold"
+              className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 font-bold text-xl"
             >
               Get the addresses
             </button>
@@ -89,13 +89,14 @@ const GetLiquidityPoolCreatedByUser = () => {
             {address.map((data, index) => (
               <div
                 key={index}
-                className="text-gray-700 mb-2 break-words font-bold"
+                className="text-gray-700 mb-2 break-words font-bold text-xl"
               >
                 <br />
                 {data}
                 <br />
+                <br />
                 <button
-                  className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                  className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg px-5 py-2.5 text-center me-2 mb-2 text-xl"
                   onClick={() => setSelectedAddress(data)}
                 >
                   More Info
@@ -113,7 +114,7 @@ const GetLiquidityPoolCreatedByUser = () => {
         <br />
         <br />
         <div className="text-center text-gray-700 font-medium">
-          <ul className="steps">
+          <ul className="steps text-xl">
             <li className="step step-primary">
               <a href="./createliquiditypool">Create Liquidity Pool</a>
             </li>
