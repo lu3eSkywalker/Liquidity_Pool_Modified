@@ -8,7 +8,6 @@ const walkthrough = () => {
     <div>
       <Navbar />
       <Walkthrough />
-      <Footer />
     </div>
   );
 };

@@ -1,6 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { ethers } from "ethers";
+import Image from "next/image";
+import asset1 from "../assets/asset1.png";
+import asset2 from "../assets/asset2.jpeg";
+import asset4 from "../assets/asset4.jpg";
+import cryptoPunks from "../assets/cryptoPunks.png";
+import pattern_randomized from "../assets/pattern-randomized.svg";
 
 declare global {
   interface Window {
@@ -44,74 +50,110 @@ const GetCurrentLiquidity = () => {
   }
 
   return (
-    <div className="bg-gray-100">
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+    <div
+      className="bg-container"
+      style={{
+        backgroundImage: `url(${pattern_randomized.src})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        minHeight: "90vh",
+      }}
+    >
+      <div>
+        <div>
+          <div className="flex justify-between items-center">
 
-      <div className="flex justify-center font-bold text-4xl">
-        Get all the Current Reserves in the pool
-      </div>
-      <div
-        className="flex flex-col justify-center items-center h-screen bg-gray-100"
-        style={{ height: "65vh" }}
-      >
-        <div className="flex justify-center items-center h-screen bg-gray-100">
-          <div className="bg-white shadow-md rounded-lg p-8 w-[600px]">
+            <div className="flex justify-center font-bold text-[50px] mx-[300px]">
+              Get the Current Reserves in the pool
+            </div>
 
-            <div className="flex">
-              <label className="input input-bordered flex items-center gap-2 font-black text-xl">
-                Address:
-                <input
-                  type="text"
-                  className="grow"
-                  placeholder="liquidity pool contract address"
-                  onChange={(e) => setContractAddress(e.target.value)}
-                />
-              </label>
+            <div className="flex justify-start">
+              <Image
+                src={asset1}
+                alt="Description of the image"
+                width={500}
+                height={300}
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="absolute left-0" style={{ marginTop: "1px" }}>
+            <Image src={asset4} alt="Ethereum Logo" width={400} height={200} />
+          </div>
+
+          <div
+            className="absolute right-0 rounded-full mx-[80px]"
+            style={{ marginTop: "35px" }}
+          >
+            <Image
+              src={cryptoPunks}
+              alt="cryptoPunks"
+              width={300}
+              height={150}
+            />
+          </div>
+
+          <div
+            className="flex flex-col justify-center items-center"
+            style={{ height: "20vh" }}
+          >
+            <div className="absolute w-[600px] h-[350px] bg-blue-500 rounded-lg transform -rotate-6 opacity-50 my-[550px] top-[-80px]"></div>
+
+            <div className="relative bg-white shadow-md rounded-lg p-8 w-[450px] mb-6">
+              <div>
+                <label className="input input-bordered flex items-center gap-2 font-black text-xl my-2 border-4">
+                  Address:
+                  <input
+                    className="grow"
+                    type="text"
+                    placeholder="liquidity pool contract address"
+                    onChange={(e) => setContractAddress(e.target.value)}
+                  />
+                </label>
+              </div>
+
               <br />
 
               <button
-                className="btn text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 text-lg rounded-lg px-5 py-2.5 text-center me-2 mb-2 mx-5"
+                className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 font-bold text-xl"
                 onClick={() => getLiquidityInfo()}
               >
-                get info
+                Get Info
               </button>
+
+              <br />
+              {tokenAReserve ? (
+                <div className="text-xl">
+                  Token A in reserve: {tokenAReserve}
+                </div>
+              ) : (
+                <p></p>
+              )}
+
+              <br />
+
+              {tokenBReserve ? (
+                <div className="text-xl">
+                  {" "}
+                  Token B in reserve: {tokenBReserve}
+                </div>
+              ) : (
+                <p></p>
+              )}
+
+              <br />
+
+              {remainingTotalLiquidity ? (
+                <div className="text-xl">
+                  Total Liquidity in the liquidity pool:{" "}
+                  {remainingTotalLiquidity}
+                </div>
+              ) : (
+                <p></p>
+              )}
             </div>
-
-            {tokenAReserve ? (
-              <div className="text-xl">Token A in reserve: {tokenAReserve}</div>
-            ) : (
-              <p></p>
-            )}
-
-            <br />
-
-            {tokenBReserve ? (
-              <div className="text-xl">
-                {" "}
-                Token B in reserve: {tokenBReserve}
-              </div>
-            ) : (
-              <p></p>
-            )}
-
-            <br />
-
-            {remainingTotalLiquidity ? (
-              <div className="text-xl">
-                Total Liquidity in the liquidity pool: {remainingTotalLiquidity}
-              </div>
-            ) : (
-              <p></p>
-            )}
-
-            <br></br>
-            <br></br>
           </div>
-
         </div>
       </div>
     </div>
