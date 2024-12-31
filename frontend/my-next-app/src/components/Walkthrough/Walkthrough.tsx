@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Walkthrough = () => {
@@ -31,7 +32,7 @@ const Walkthrough = () => {
                 need to own them to create a liquidity pool of our own. We also
                 need the contract address of the Liquidity Pool Factory
                 contract, but we have hardcoded that address in the frontend.
-                So, for now, there's no need to add it manually.
+                So, for now, theres no need to add it manually.
               </p>
             </div>
             <hr />
@@ -149,7 +150,7 @@ const Walkthrough = () => {
             <div className="timeline-start mb-10 md:text-end">
               <time className="font-mono italic text-2xl">Step 5</time>
               <div className="text-2xl font-black">
-                <a href="/removeliquidity">Removing Liquidity</a>
+                <Link href="/removeliquidity">Removing Liquidity</Link>
               </div>
               <p className="text-xl">
                 For removing the liquidity, we would have to provide the LP

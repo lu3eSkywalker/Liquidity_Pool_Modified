@@ -1,14 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { ethers } from "ethers";
+import { MetaMaskInpageProvider } from "@metamask/providers";
 
 declare global {
   interface Window {
-    ethereum: any;
+    ethereum: MetaMaskInpageProvider;
   }
 }
 
-const TokenInfo = ({ addressOfContract }: any) => {
+const TokenInfo = ({ addressOfContract }: { addressOfContract?: string}) => {
   const [address, setAddress] = useState<string[]>([]);
   const dialogRef = useRef<HTMLDialogElement>(null);
 

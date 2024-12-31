@@ -16,7 +16,8 @@ const GetAllLiquidityPools = () => {
 
   const provider = new ethers.JsonRpcProvider(RPC_URL);
   const contract = new ethers.Contract(
-    liquidityPoolFactoryContract || "0x663F3ad617193148711d28f5334eE4Ed07016602",
+    liquidityPoolFactoryContract ||
+      "0x663F3ad617193148711d28f5334eE4Ed07016602",
     ABI,
     provider
   );
@@ -39,8 +40,8 @@ const GetAllLiquidityPools = () => {
         <br />
 
         <div>
-          {address.map((data) => (
-            <div>{data}</div>
+          {address.map((data, index) => (
+            <div key={index}>{data}</div>
           ))}
         </div>
 

@@ -1,12 +1,19 @@
 import React from "react";
 
 const LiquidityPoolByUserInfo = () => {
+  const handleClick = () => {
+    const modal = document.getElementById("my_modal_4") as HTMLDialogElement;
+    if (modal) {
+      modal.showModal();
+    }
+  };
+  
   return (
     <div>
       <div>
         <button
           className="btn text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2"
-          onClick={() => document.getElementById("my_modal_4").showModal()}
+          onClick={handleClick}
         >
           Getting Liquidity Pool Info Using User Address
         </button>

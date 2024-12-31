@@ -1,16 +1,16 @@
 import React from "react";
 import { useState } from "react";
 import { ethers } from "ethers";
+import { MetaMaskInpageProvider } from "@metamask/providers";
 import Image from "next/image";
 import asset1 from "../assets/asset1.png";
-import asset2 from "../assets/asset2.jpeg";
 import asset4 from "../assets/asset4.jpg";
 import cryptoPunks from "../assets/cryptoPunks.png";
 import pattern_randomized from "../assets/pattern-randomized.svg";
 
 declare global {
   interface Window {
-    ethereum: any;
+    ethereum: MetaMaskInpageProvider;
   }
 }
 
@@ -24,10 +24,13 @@ const GetCurrentLiquidity = () => {
   const [remainingTotalLiquidity, setRemainingTotalLiquidity] =
     useState<number>(0);
 
+  const weiToEth = 10 ** 18;
+
   const RPC_URL = process.env.NEXT_PUBLIC_RPC_URL;
 
   const ABI = [
     "function getCurrentLiquidity() external view returns (uint256, uint256, uint256)",
+    "function getPoolsByUser(address user) external view returns (address[] memory)"
   ];
 
   const provider = new ethers.JsonRpcProvider(RPC_URL);
@@ -41,10 +44,10 @@ const GetCurrentLiquidity = () => {
       console.log(getLiquidity[1]);
       console.log(getLiquidity[2]);
 
-      setTokenAReserve(parseInt(getLiquidity[0]));
-      setTokenBReserve(parseInt(getLiquidity[1]));
-      setRemainingTotalLiquidity(parseInt(getLiquidity[2]));
-    } catch (error: any) {
+      setTokenAReserve(parseInt(getLiquidity[0]) / weiToEth);
+      setTokenBReserve(parseInt(getLiquidity[1]) / weiToEth);
+      setRemainingTotalLiquidity(parseInt(getLiquidity[2]) / weiToEth);
+    } catch (error) {
       console.error("Error Adding liquidity", error);
     }
   }

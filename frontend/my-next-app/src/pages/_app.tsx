@@ -1,7 +1,8 @@
-import '@/styles/globals.css'; // Adjust the path based on your folder structure
+import { AppProps } from "next/app";
+import "@/styles/globals.css";
 
-function MyApp({ Component, pageProps }: any) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;
