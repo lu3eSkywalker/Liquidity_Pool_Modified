@@ -44,7 +44,7 @@ const CreateLiquidityPool = () => {
         const signer = await provider.getSigner();
 
         const contract = new ethers.Contract(
-          liquidityPoolFactoryContract,
+          liquidityPoolFactoryContract || '',
           ABI,
           signer
         );
