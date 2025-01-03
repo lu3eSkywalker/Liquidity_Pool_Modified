@@ -3,6 +3,11 @@
 
 This repository contains the code for a **Factory Contract** designed to  deploy Liquidity Pool Smart Contracts. Instead of deploying individual smart contracts for each liquidity pool, users can use this factory contract to create multiple liquidity pools.
 
+## Creating Liquidity Pools
+![LiquidityPoolModified](https://github.com/user-attachments/assets/dbc4ac88-9c16-441d-b8c5-8ffc784d637d)
+
+
+
 ### Liquidity Pool Contract
 Each liquidity pool created by the factory supports the following features:
 #### 1. Add Liquidity
