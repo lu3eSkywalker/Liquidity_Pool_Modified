@@ -6,6 +6,9 @@ This repository contains the code for a **Factory Contract** designed to  deploy
 ## Creating Liquidity Pools
 ![LiquidityPoolModified](https://github.com/user-attachments/assets/dbc4ac88-9c16-441d-b8c5-8ffc784d637d)
 
+## Video Demo
+
+https://github.com/user-attachments/assets/b854dd45-0ac8-4154-9a12-834b23295737
 
 
 ### Liquidity Pool Contract
