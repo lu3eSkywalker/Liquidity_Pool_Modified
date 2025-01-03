@@ -30,8 +30,7 @@ const CreateLiquidityPool = () => {
 
   const [loadingBar, setLoadingBar] = useState<boolean>(false);
 
-  const liquidityPoolFactoryContract =
-    "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+  const liquidityPoolFactoryContract = process.env.NEXT_PUBLIC_LIQUIDITY_POOL_CONTRACT_ADDRESS;
 
   const ABI = [
     "function createPool(address, address) external returns (address)",
